@@ -1,0 +1,48 @@
+{
+  "name": "uisits/compoships",
+  "description": "Laravel relationships with support for composite/multiple keys",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "laravel composite keys",
+    "laravel relationships"
+  ],
+  "authors": [
+    {
+      "name": "UIS ITS",
+      "email": "its@uis.edu"
+    }
+  ],
+  "require": {
+    "php": "^7.1.3",
+    "illuminate/database": "5.7.28",
+    "illuminate/console": "5.7.28",
+    "illuminate/support": "5.7.28",
+    "illuminate/cache": "5.7.28"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0",
+    "laravel/laravel": "5.7.*",
+    "fzaninotto/faker": "^1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "uisits\\Compoships\\": "src"
+    },
+    "files": [
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "uisits\\Compoships\\ComposhipsServiceProvider"
+      ]
+    }
+  },
+  "suggest": {
+    "uisits/eloquent-mutators": "Reusable mutators (getters/setters) for Laravel 5's Eloquent",
+    "uisits/eloquent-auto-append": "Automatically append accessors to model serialization",
+    "uisits/blade-active": "Blade directives for the Laravel 'Active' package",
+    "uisits/syntactic": "Syntactic sugar for named and indexed parameters call."
+  }
+}
