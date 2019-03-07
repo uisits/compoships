@@ -1,11 +1,12 @@
 Compoships
 ==========
-
-**Compoships** offers the ability to specify relationships based on two (or more) columns in Laravel 5's Eloquent. The need to match multiple columns in the definition of an Eloquent relationship often arises when working with third party or pre existing schema/database. 
+**This Package is exact replica of [awobaz/compoships](https://github.com/topclaudy/compoships). This package just provides support for Laravel version ^5.7**
+==========
+**Compoships** offers the ability to specify relationships based on two (or more) columns in Laravel 5's Eloquent. The need to match multiple columns in the definition of an Eloquent relationship often arises when working with third party or pre existing schema/database.
 
 ## The problem
 
-Eloquent doesn't support composite keys. As a consequence, there is no way to define a relationship from one model to another by matching more than one column. Trying to use `where clauses` (like in the example below) won't work when eager loading the relationship because at the time the relationship is processed **$this->f2** is null. 
+Eloquent doesn't support composite keys. As a consequence, there is no way to define a relationship from one model to another by matching more than one column. Trying to use `where clauses` (like in the example below) won't work when eager loading the relationship because at the time the relationship is processed **$this->f2** is null.
 
 ```php
 namespace App;
@@ -36,23 +37,23 @@ class Foo extends Model
 The recommended way to install **Compoships** is through [Composer](http://getcomposer.org/)
 
 ```bash
-$ composer require awobaz/compoships
+$ composer require uisits/compoships
 ```
 ## Usage
 
-### Using the `Awobaz\Compoships\Database\Eloquent\Model` class
+### Using the `uisits\Compoships\Database\Eloquent\Model` class
 
-Simply make your model class derive from the `Awobaz\Compoships\Database\Eloquent\Model` base class. The `Awobaz\Compoships\Database\Eloquent\Model` extends the `Eloquent` base class without changing its core functionality.
+Simply make your model class derive from the `uisits\Compoships\Database\Eloquent\Model` base class. The `uisits\Compoships\Database\Eloquent\Model` extends the `Eloquent` base class without changing its core functionality.
 
-### Using the `Awobaz\Compoships\Compoships` trait
+### Using the `uisits\Compoships\Compoships` trait
 
-If for some reasons you can't derive your models from `Awobaz\Compoships\Database\Eloquent\Model`, you may take advantage of the `Awobaz\Compoships\Compoships` trait. Simply use the trait in your models.
- 
-**Note:** To define a multi-columns relationship from a model *A* to another model *B*, **both models must either extend `Awobaz\Compoships\Database\Eloquent\Model` or use the `Awobaz\Compoships\Compoships` trait**
+If for some reasons you can't derive your models from `uisits\Compoships\Database\Eloquent\Model`, you may take advantage of the `uisits\Compoships\Compoships` trait. Simply use the trait in your models.
+
+**Note:** To define a multi-columns relationship from a model *A* to another model *B*, **both models must either extend `uisits\Compoships\Database\Eloquent\Model` or use the `uisits\Compoships\Compoships` trait**
 
 ### Syntax
 
-... and now we can define a relationship from a model *A* to another model *B* by matching two or more columns (by passing an array of columns instead of a string). 
+... and now we can define a relationship from a model *A* to another model *B* by matching two or more columns (by passing an array of columns instead of a string).
 
 ```php
 namespace App;
@@ -61,8 +62,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class A extends Model
 {
-    use \Awobaz\Compoships\Compoships;
-    
+    use \uisits\Compoships\Compoships;
+
     public function b()
     {
         return $this->hasMany('B', ['f1', 'f2'], ['f1', 'f2']);
@@ -79,8 +80,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class B extends Model
 {
-    use \Awobaz\Compoships\Compoships;
-    
+    use \uisits\Compoships\Compoships;
+
     public function a()
     {
         return $this->belongsTo('A', ['f1', 'f2'], ['f1', 'f2']);
@@ -120,15 +121,3 @@ Then, run the following command:
 ```bash
 $ vendor/bin/phpunit
 ```
-
-## Authors
-
-* [Claudin J. Daniel](https://github.com/topclaudy) - *Initial work*
-
-## Sponsored by
-
-* [Awobaz](https://awobaz.com) - Web/Mobile agency based in Montreal, Canada
-
-## License
-
-**Compoships** is licensed under the [MIT License](http://opensource.org/licenses/MIT).
