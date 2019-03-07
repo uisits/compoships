@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Model;
+namespace uisits\Compoships\Tests\Model;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Model;
+namespace uisits\Compoships\Tests\Model;
 
-use Awobaz\Compoships\Database\Eloquent\Model;
+use uisits\Compoships\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TrackingTask extends Model

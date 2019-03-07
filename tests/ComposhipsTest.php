@@ -1,10 +1,10 @@
 <?php
 
-use Awobaz\Compoships\Database\Eloquent\Model;
-use Awobaz\Compoships\Tests\Model\Allocation;
-use Awobaz\Compoships\Tests\Model\PickupPoint;
-use Awobaz\Compoships\Tests\Model\Space;
-use Awobaz\Compoships\Tests\Model\TrackingTask;
+use uisits\Compoships\Database\Eloquent\Model;
+use uisits\Compoships\Tests\Model\Allocation;
+use uisits\Compoships\Tests\Model\PickupPoint;
+use uisits\Compoships\Tests\Model\Space;
+use uisits\Compoships\Tests\Model\TrackingTask;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
 
