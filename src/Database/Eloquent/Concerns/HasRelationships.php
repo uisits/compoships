@@ -74,8 +74,8 @@ trait HasRelationships
     {
         $uses = class_uses_recursive($related);
 
-        if (! array_key_exists('Awobaz\Compoships\Compoships', $uses) && ! is_subclass_of($related, 'Awobaz\Compoships\Database\Eloquent\Model')) {
-            throw new InvalidUsageException("The related model '${related}' must either extend 'Awobaz\Compoships\Database\Eloquent\Model' or use the 'Awobaz\Compoships\Compoships' trait");
+        if (! array_key_exists('uisits\Compoships\Compoships', $uses) && ! is_subclass_of($related, 'uisits\Compoships\Database\Eloquent\Model')) {
+            throw new InvalidUsageException("The related model '${related}' must either extend 'uisits\Compoships\Database\Eloquent\Model' or use the 'uisits\Compoships\Compoships' trait");
         }
     }
 
